@@ -276,7 +276,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 .fill-content { position: relative; z-index: 1; max-width: var(--container); margin: 0 auto; padding: 56px 24px; }
 
 /* ===================== SECTION SEAMS (solid, gap-free blend where videos meet) ===================== */
-.hero::before, .authority-strip::before, .media-banner::before, .fill-wrap::before,
+.hero::before, .media-banner::before, .fill-wrap::before,
 .transition-section::before, .final-cta::before, .site-footer::before {
   content: "";
   position: absolute;
@@ -286,7 +286,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
   z-index: 1;
   pointer-events: none;
 }
-.hero::after, .authority-strip::after, .media-banner::after, .fill-wrap::after,
+.hero::after, .media-banner::after, .fill-wrap::after,
 .transition-section::after, .final-cta::after {
   content: "";
   position: absolute;
@@ -610,7 +610,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 }
 
 @media (max-width: 600px) {
-  .authority-inner { grid-template-columns: 1fr; gap: 20px; }
+  .authority-inner { grid-template-columns: 1fr; gap: 16px; padding-top: 28px; padding-bottom: 28px; }
   .services-grid { grid-template-columns: 1fr; }
   .instagram-grid { max-width: 320px; }
   .hero-actions .btn { width: 100%; }
