@@ -71,7 +71,7 @@
      stay paused on their poster frame until they earn a slot. */
   const bgVideos = document.querySelectorAll(".bg-video");
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const MAX_PLAYING = 2;
+  const MAX_PLAYING = 1;
 
   if (bgVideos.length && !prefersReducedMotion && "IntersectionObserver" in window) {
     const intersecting = new Set();

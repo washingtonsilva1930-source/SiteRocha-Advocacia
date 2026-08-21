@@ -93,6 +93,11 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 
 
 
+/* Promotes background videos to their own GPU compositing layer, so the
+   scroll-linked opacity crossfade is a cheap compositor-only operation
+   instead of a full repaint on every frame. */
+.bg-video { will-change: opacity; }
+
 /* ===================== REVEAL ANIMATION ===================== */
 .reveal { opacity: 0; transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
 .reveal[data-reveal="up"] { transform: translateY(36px); }
