@@ -297,6 +297,27 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
   pointer-events: none;
 }
 
+/* Smaller seam just for the short Authority strip — big enough to blend
+   the edges, small enough to never reach the stacked mobile items. */
+.authority-strip::before {
+  content: "";
+  position: absolute;
+  top: -1px; left: 0; right: 0;
+  height: clamp(18px, 3vw, 34px);
+  background: linear-gradient(to bottom, #0c0908 0%, #0c0908 12%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+.authority-strip::after {
+  content: "";
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  height: clamp(18px, 3vw, 34px);
+  background: linear-gradient(to top, #0c0908 0%, #0c0908 12%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
 /* ===================== MEDIA BANNER (full-bleed video + overlaid text) ===================== */
 .media-banner { position: relative; width: 100vw; left: 50%; transform: translateX(-50%); overflow: hidden; margin-top: -1px; margin-bottom: -1px; }
 .media-banner-media { position: absolute; inset: 0; }
