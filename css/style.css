@@ -266,7 +266,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
-.authority-item { display: flex; align-items: baseline; gap: 12px; }
+.authority-item { display: flex; align-items: center; gap: 10px; }
+.authority-icon { display: inline-flex; width: 20px; height: 20px; color: var(--champagne); flex-shrink: 0; }
 .authority-mark { font-family: var(--font-display); font-style: italic; color: var(--champagne); font-size: 1.1rem; }
 .authority-item p { font-size: 0.92rem; font-weight: 600; color: var(--offwhite); }
 
