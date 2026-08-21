@@ -351,9 +351,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 .media-banner--left .media-banner-text { max-width: clamp(260px, 38vw, 460px); }
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .service-card {
-  background: rgba(20,15,13,0.55);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(20,15,13,0.74);
   border: 1px solid rgba(245,241,235,0.16);
   border-radius: var(--radius);
   padding: 40px 32px;
@@ -381,9 +379,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 .practice-section { }
 .practice-list { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .practice-item {
-  background: rgba(20,15,13,0.5);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(20,15,13,0.74);
   border: 1px solid rgba(245,241,235,0.18);
   padding: 26px 28px;
   border-radius: var(--radius);
@@ -430,9 +426,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 .testimonials-content-wrap { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
 .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 28px; }
 .testimonial-card {
-  background: rgba(20,15,13,0.55);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(20,15,13,0.74);
   border: 1px solid rgba(245,241,235,0.16);
   padding: 30px 28px;
   text-align: left;
@@ -464,9 +458,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 .instagram-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; max-width: 640px; margin: 0 auto 28px; }
 .instagram-tile {
   aspect-ratio: 1;
-  background: rgba(20,15,13,0.5);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(20,15,13,0.74);
   border: 1px solid rgba(245,241,235,0.16);
   display: flex; align-items: center; justify-content: center;
   color: var(--champagne);
@@ -480,9 +472,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 .faq-section { }
 .faq-content-wrap { max-width: 820px; margin: 0 auto; padding: 0 24px; }
 .faq-item {
-  background: rgba(20,15,13,0.5);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(20,15,13,0.74);
   border: 1px solid rgba(245,241,235,0.14);
   border-radius: var(--radius);
   margin-bottom: 12px;
