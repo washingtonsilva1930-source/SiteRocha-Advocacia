@@ -63,31 +63,69 @@
   });
 
   /* Background videos: load + play only near viewport, pause when offscreen.
-     If the visitor prefers reduced motion, never load them — the poster image stays. */
+     If the visitor prefers reduced motion, never load them — the poster image stays.
+     Sections sit flush against each other now, so on a tall desktop viewport
+     several can be "intersecting" at once — decoding/playing them all at the
+     same time is what made playback feel slow. Cap how many actually play
+     simultaneously (the ones closest to the viewport center win); the rest
+     stay paused on their poster frame until they earn a slot. */
   const bgVideos = document.querySelectorAll(".bg-video");
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const MAX_PLAYING = 2;
 
   if (bgVideos.length && !prefersReducedMotion && "IntersectionObserver" in window) {
+    const intersecting = new Set();
+
+    const updatePlayback = () => {
+      const vh = window.innerHeight;
+      const center = vh / 2;
+      const ranked = Array.from(intersecting).sort((a, b) => {
+        const da = Math.abs(a.getBoundingClientRect().top + a.getBoundingClientRect().height / 2 - center);
+        const db = Math.abs(b.getBoundingClientRect().top + b.getBoundingClientRect().height / 2 - center);
+        return da - db;
+      });
+      const shouldPlay = new Set(ranked.slice(0, MAX_PLAYING));
+      bgVideos.forEach((video) => {
+        if (shouldPlay.has(video)) {
+          if (!video.dataset.loaded) {
+            const source = video.querySelector("source");
+            source.src = source.dataset.src;
+            video.load();
+            video.dataset.loaded = "true";
+          }
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    };
+
     const videoIO = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          const video = entry.target;
-          if (entry.isIntersecting) {
-            if (!video.dataset.loaded) {
-              const source = video.querySelector("source");
-              source.src = source.dataset.src;
-              video.load();
-              video.dataset.loaded = "true";
-            }
-            video.play().catch(() => {});
-          } else {
-            video.pause();
-          }
+          if (entry.isIntersecting) intersecting.add(entry.target);
+          else intersecting.delete(entry.target);
         });
+        updatePlayback();
       },
-      { rootMargin: "200px 0px" }
+      { rootMargin: "0px" }
     );
     bgVideos.forEach((video) => videoIO.observe(video));
+
+    let rankTicking = false;
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (!rankTicking) {
+          requestAnimationFrame(() => {
+            if (intersecting.size > MAX_PLAYING) updatePlayback();
+            rankTicking = false;
+          });
+          rankTicking = true;
+        }
+      },
+      { passive: true }
+    );
   }
 
   /* Section crossfade: each background video/image fades in as its section
