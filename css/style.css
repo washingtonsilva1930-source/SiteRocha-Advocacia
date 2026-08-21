@@ -583,6 +583,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 
 @media (max-width: 980px) {
 
+  .profile-section .media-banner--left { min-height: 950px; }
   .authority-inner { grid-template-columns: repeat(2, 1fr); }
   .split-section, .split-section--reverse { grid-template-columns: 1fr; }
   .split-section--reverse .split-media { order: 1; }
