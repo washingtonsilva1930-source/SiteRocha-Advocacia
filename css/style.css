@@ -77,8 +77,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 }
 .btn-primary { background: var(--bordo); color: var(--white); }
 .btn-primary:hover { background: #591016; transform: translateY(-2px); }
-.btn-primary--light { background: var(--champagne); color: var(--grafite); }
-.btn-primary--light:hover { background: #c7ac7c; }
+.btn-primary--light { background: var(--bordo); color: var(--white); }
+.btn-primary--light:hover { background: #591016; }
 .btn-outline { border-color: var(--grafite); color: var(--grafite); }
 .btn-outline:hover { background: var(--grafite); color: var(--white); }
 .btn-outline--light { border-color: rgba(245,241,235,0.55); color: var(--offwhite); }
