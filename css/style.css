@@ -458,6 +458,12 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 .profile-section .media-banner--left { min-height: clamp(560px, 68vw, 760px); }
 .profile-section .media-banner--left .media-banner-scrim { background: linear-gradient(90deg, rgba(20,15,13,0.94) 0%, rgba(20,15,13,0.55) 42%, rgba(20,15,13,0.05) 78%, rgba(20,15,13,0) 100%); }
 .profile-section .media-banner--left .media-banner-text.profile-text { max-width: clamp(300px, 34vw, 430px); }
+/* Fixed, explicit framing for Dra. Cássia's photo/video — keeps her face
+   (eyes/forehead/hair/chin) safely inside the crop at every container
+   ratio, from the very first visible pixel (no scroll- or JS-driven
+   repositioning is applied to this element). */
+.profile-section .media-banner-media video,
+.profile-section .media-banner-media img { object-position: 58% 26%; }
 .profile-subtitle { font-weight: 600; color: var(--champagne); margin-bottom: 16px; }
 .profile-text p { color: rgba(245,241,235,0.86); max-width: 52ch; margin-bottom: 14px; }
 .profile-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 28px; margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(245,241,235,0.22); }
@@ -652,6 +658,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 @media (max-width: 980px) {
 
   .profile-section .media-banner--left { min-height: 950px; }
+  .profile-section .media-banner-media video,
+  .profile-section .media-banner-media img { object-position: 56% 20%; }
   .authority-inner { grid-template-columns: repeat(2, 1fr); }
   .split-section, .split-section--reverse { grid-template-columns: 1fr; }
   .split-section--reverse .split-media { order: 1; }
