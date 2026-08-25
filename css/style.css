@@ -687,6 +687,24 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 }
 
 @media (max-width: 600px) {
+  /* Mobile-only Hero fix: the desktop version anchors content to the
+     bottom of a tall, fixed-floor box (min-height + overflow:hidden),
+     which clips the top of the content (eyebrow/heading/lead/first
+     button) whenever a phone's real viewport is shorter than that
+     floor — leaving only the last, bottom-anchored button visible.
+     On mobile we instead let content flow top-to-bottom right below
+     the header's reserved space, so the section simply grows to fit
+     everything — nothing can ever be clipped, on any screen height.
+     Desktop rule (align-items:flex-end, min-height:max(100svh,760px),
+     padding-top:110px) is untouched. */
+  .hero {
+    min-height: 100svh;
+    padding-top: 96px;
+    align-items: flex-start;
+  }
+  .hero-content { padding: 28px 20px 56px; }
+  .scroll-indicator { bottom: 18px; }
+
   .authority-inner { grid-template-columns: 1fr; gap: 16px; padding-top: 28px; padding-bottom: 28px; }
   .services-grid { grid-template-columns: 1fr; }
   .instagram-grid { max-width: 320px; }
