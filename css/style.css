@@ -213,7 +213,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 .hero-content .eyebrow { color: var(--champagne); }
 .hero h1 {
   font-size: clamp(2.4rem, 6vw, 4.4rem);
-  max-width: 14ch;
+  max-width: 17ch;
   margin-bottom: 22px;
   color: var(--offwhite);
 }
