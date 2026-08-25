@@ -245,18 +245,27 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 @keyframes scrollDot { 0%, 100% { transform: translateY(0); opacity: 1; } 60% { transform: translateY(10px); opacity: 0.2; } }
 
 /* ===================== MANIFESTO BAND ===================== */
-.manifesto-band { background: var(--grafite); padding: 64px 24px; }
-.manifesto-inner { max-width: 780px; margin: 0 auto; text-align: center; }
+.manifesto-band { background: var(--grafite); padding: clamp(80px, 11vw, 130px) 24px; }
+.manifesto-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+.manifesto-mark { display: block; width: 32px; height: 2px; background: var(--champagne); margin: 0 auto 30px; }
 .manifesto-quote {
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 500;
   color: var(--offwhite);
-  font-size: clamp(1.4rem, 2.8vw, 2rem);
-  line-height: 1.35;
-  margin-bottom: 20px;
+  font-size: clamp(1.55rem, 3.2vw, 2.35rem);
+  line-height: 1.34;
+  letter-spacing: 0.01em;
+  margin-bottom: 28px;
 }
-.manifesto-sub { color: rgba(245,241,235,0.72); font-size: 0.98rem; max-width: 56ch; margin: 0 auto; }
+.manifesto-sub { color: rgba(245,241,235,0.72); font-size: 1.02rem; line-height: 1.65; max-width: 52ch; margin: 0 auto; }
+
+@media (max-width: 600px) {
+  .manifesto-band { padding: 56px 22px; }
+  .manifesto-mark { margin-bottom: 22px; }
+  .manifesto-quote { font-size: 1.45rem; line-height: 1.4; margin-bottom: 18px; }
+  .manifesto-sub { font-size: 0.9rem; line-height: 1.55; }
+}
 
 /* ===================== AUTHORITY STRIP ===================== */
 .authority-strip {
@@ -471,12 +480,14 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 .media-banner-text .location-phone a { color: var(--offwhite); }
 .location-tag {
   display: inline-block;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--champagne);
-  border: 1px solid rgba(182,154,104,0.5);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--grafite);
+  background: var(--champagne);
+  border: 1px solid var(--champagne);
   border-radius: 20px;
-  padding: 5px 14px;
+  padding: 6px 16px;
   margin-bottom: 18px;
 }
 .location-actions { display: flex; flex-wrap: wrap; gap: 14px; }
