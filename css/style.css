@@ -483,9 +483,9 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.02em;
-  color: var(--grafite);
-  background: var(--champagne);
-  border: 1px solid var(--champagne);
+  color: var(--white);
+  background: var(--bordo);
+  border: 1px solid var(--bordo);
   border-radius: 20px;
   padding: 6px 16px;
   margin-bottom: 18px;
