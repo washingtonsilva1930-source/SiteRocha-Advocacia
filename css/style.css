@@ -275,7 +275,15 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height
 .manifesto-sub { color: rgba(245,241,235,0.78); font-size: 1.02rem; line-height: 1.65; max-width: 52ch; margin: 0 auto; }
 
 @media (max-width: 600px) {
-  .manifesto-band { min-height: 460px; }
+  /* Lower on purpose: the video is panoramic (the two women sit at its
+     far left/right edges, with empty space in the middle). A tall,
+     narrow container forces object-fit:cover to crop deep into both
+     sides to fill the height, cutting the people out and leaving just
+     the empty center. Keeping this band closer to the video's own
+     16:9 ratio means far less side-cropping, so both women stay in
+     frame. Content (quote + sub text) still comfortably determines
+     the actual rendered height above this floor. */
+  .manifesto-band { min-height: 260px; }
   .manifesto-inner { padding: 48px 22px; }
   .manifesto-mark { margin-bottom: 22px; }
   .manifesto-quote { font-size: 1.45rem; line-height: 1.4; margin-bottom: 18px; }
